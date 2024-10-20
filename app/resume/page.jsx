@@ -175,38 +175,36 @@ const Resume = () => {
               <p className="max-w-[600xp] text-white/60 mx-auto xl:mx-0 text-justify">
                 {experience.description}
               </p>
-              <ScrollArea className="h-[400px]">
-                <ul className="grid grid-cols-1 gap-[30px]">
-                  {experience.items.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="bg-zinc-700 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                      >
-                        <span className="text-accent-default">
-                          {item.duration}
-                        </span>
-                        <h3 className="text-md max-w-[260px] min-h-[30px] text-center font-semibold lg:text-left">
-                          {item.position}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] bg-accent-default rounded-full"></span>
-                          <p className="text-white/60">{item.company}</p>
-                        </div>
-                        <ul className="container ml-3">
-                          {item.description.map((item, index) => {
-                            return (
-                              <li key={index} className="list-disc">
-                                <p className="text-justify">{item}</p>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
+              <ul className="grid grid-cols-1 gap-[30px]">
+                {experience.items.map((item, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="bg-zinc-700 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                    >
+                      <span className="text-accent-default">
+                        {item.duration}
+                      </span>
+                      <h3 className="text-md max-w-[260px] min-h-[30px] text-center font-semibold lg:text-left">
+                        {item.position}
+                      </h3>
+                      <div className="flex items-center gap-3">
+                        <span className="w-[6px] h-[6px] bg-accent-default rounded-full"></span>
+                        <p className="text-white/60">{item.company}</p>
+                      </div>
+                      <ul className="container ml-3">
+                        {item.description.map((item, index) => {
+                          return (
+                            <li key={index} className="list-disc">
+                              <p className="text-justify">{item}</p>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </TabsContent>
           <TabsContent value="education" className="w-full h-full">
@@ -215,54 +213,50 @@ const Resume = () => {
               <p className="max-w-[600xp] text-white/60 mx-auto xl:mx-0 text-justify">
                 {education.description}
               </p>
-              <ScrollArea className="h-[400px]">
-                <ul className="grid grid-cols-1 gap-[30px]">
-                  {education.items.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="bg-zinc-700 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                      >
-                        <span className="text-accent-default">
-                          {item.duration}
-                        </span>
-                        <h3 className="text-md max-w-[260px] min-h-[30px] text-center font-semibold lg:text-left">
-                          {item.degree}
+              <ul className="grid grid-cols-1 gap-[30px]">
+                {education.items.map((item, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="bg-zinc-700 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                    >
+                      <span className="text-accent-default">
+                        {item.duration}
+                      </span>
+                      <h3 className="text-md max-w-[260px] min-h-[30px] text-center font-semibold lg:text-left">
+                        {item.degree}
+                      </h3>
+                      <h3 className="text-md max-w-[260px] min-h-[30px] text-center font-semibold lg:text-left">
+                        GPA : {item.gpa}
+                      </h3>
+                      <div className="flex items-center gap-3">
+                        <span className="w-[6px] h-[6px] bg-accent-default rounded-full"></span>
+                        <p className="text-white/60">{item.institution}</p>
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <h3 className="text-white/60 text-md self-start">
+                          Final Project
                         </h3>
-                        <h3 className="text-md max-w-[260px] min-h-[30px] text-center font-semibold lg:text-left">
-                          GPA : {item.gpa}
+                        <h3 className="text-white text-md font-semibold">
+                          {item.final_project.title}
                         </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] bg-accent-default rounded-full"></span>
-                          <p className="text-white/60">{item.institution}</p>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                          <h3 className="text-white/60 text-md self-start">
-                            Final Project
-                          </h3>
-                          <h3 className="text-white text-md font-semibold">
-                            {item.final_project.title}
-                          </h3>
-                          <h3 className="text-white/60 text-md self-start">
-                            Desription
-                          </h3>
-                          <ul className="list-disc">
-                            {item.final_project.description.map(
-                              (desc, index) => {
-                                return (
-                                  <li className="text-justify" key={index}>
-                                    {desc}
-                                  </li>
-                                );
-                              }
-                            )}
-                          </ul>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
+                        <h3 className="text-white/60 text-md self-start">
+                          Desription
+                        </h3>
+                        <ul className="list-disc">
+                          {item.final_project.description.map((desc, index) => {
+                            return (
+                              <li className="text-justify" key={index}>
+                                {desc}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </TabsContent>
           <TabsContent value="skills" className="w-full h-full">
@@ -273,37 +267,33 @@ const Resume = () => {
                   {skills.description}
                 </p>
               </div>
-              <ScrollArea className="h-[400px]">
-                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <div key={index}>
-                        <h3 className="text-2xl font-bold mb-3">
-                          {skill.title}
-                        </h3>
-                        <ul className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-4">
-                          {skill.list.map((item, index) => {
-                            return (
-                              <li key={index}>
-                                <TooltipProvider delayDuration={100}>
-                                  <Tooltip>
-                                    <TooltipTrigger className="w-full h-[120px] bg-zinc-700 rounded-xl flex justify-center items-center group">
-                                      <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
-                                        {item.icon}
-                                      </div>
-                                    </TooltipTrigger>
-                                    <TooltipContent>{item.name}</TooltipContent>
-                                  </Tooltip>
-                                </TooltipProvider>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
+              <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {skills.skillList.map((skill, index) => {
+                  return (
+                    <div key={index}>
+                      <h3 className="text-2xl font-bold mb-3">{skill.title}</h3>
+                      <ul className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-4">
+                        {skill.list.map((item, index) => {
+                          return (
+                            <li key={index}>
+                              <TooltipProvider delayDuration={100}>
+                                <Tooltip>
+                                  <TooltipTrigger className="w-full h-[120px] bg-zinc-700 rounded-xl flex justify-center items-center group">
+                                    <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
+                                      {item.icon}
+                                    </div>
+                                  </TooltipTrigger>
+                                  <TooltipContent>{item.name}</TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </ul>
             </div>
           </TabsContent>
           <TabsContent value="about" className="w-full h-full">
