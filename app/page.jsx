@@ -15,7 +15,7 @@ const Home = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <div className="flex flex-row gap-1 text-2xl">
+            <div className="flex flex-row gap-1 text-2xl justify-center  xl:justify-start">
               <TypeWriter />
               <span>Developer</span>
             </div>

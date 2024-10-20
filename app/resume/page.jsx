@@ -258,15 +258,6 @@ const Resume = () => {
                             )}
                           </ul>
                         </div>
-                        <ul className="container ml-3">
-                          {/* {item.items.map((item, index) => {
-                            return (
-                              <li key={index} className="list-disc">
-                                <p className="text-justify">{item}</p>
-                              </li>
-                            );
-                          })} */}
-                        </ul>
                       </li>
                     );
                   })}
@@ -287,24 +278,26 @@ const Resume = () => {
                   return (
                     <div key={index}>
                       <h3 className="text-2xl font-bold mb-3">{skill.title}</h3>
-                      <ul className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-4">
-                        {skill.list.map((item, index) => {
-                          return (
-                            <li key={index}>
-                              <TooltipProvider delayDuration={100}>
-                                <Tooltip>
-                                  <TooltipTrigger className="w-full h-[150px] bg-zinc-700 rounded-xl flex justify-center items-center group">
-                                    <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
-                                      {item.icon}
-                                    </div>
-                                  </TooltipTrigger>
-                                  <TooltipContent>{item.name}</TooltipContent>
-                                </Tooltip>
-                              </TooltipProvider>
-                            </li>
-                          );
-                        })}
-                      </ul>
+                      <ScrollArea className="h-[400px]">
+                        <ul className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-4">
+                          {skill.list.map((item, index) => {
+                            return (
+                              <li key={index}>
+                                <TooltipProvider delayDuration={100}>
+                                  <Tooltip>
+                                    <TooltipTrigger className="w-full h-[120px] bg-zinc-700 rounded-xl flex justify-center items-center group">
+                                      <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
+                                        {item.icon}
+                                      </div>
+                                    </TooltipTrigger>
+                                    <TooltipContent>{item.name}</TooltipContent>
+                                  </Tooltip>
+                                </TooltipProvider>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </ScrollArea>
                     </div>
                   );
                 })}
