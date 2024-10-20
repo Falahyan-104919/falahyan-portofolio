@@ -266,8 +266,8 @@ const Resume = () => {
             </div>
           </TabsContent>
           <TabsContent value="skills" className="w-full h-full">
-            <div className="flex flex-col gap-[30px]">
-              <div className="flex flex-col gap-[60px] text-center xl:text-left">
+            <div className="flex flex-col gap-[60px]">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{skills.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-justify">
                   {skills.description}
@@ -278,26 +278,24 @@ const Resume = () => {
                   return (
                     <div key={index}>
                       <h3 className="text-2xl font-bold mb-3">{skill.title}</h3>
-                      <ScrollArea className="h-[400px]">
-                        <ul className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-4">
-                          {skill.list.map((item, index) => {
-                            return (
-                              <li key={index}>
-                                <TooltipProvider delayDuration={100}>
-                                  <Tooltip>
-                                    <TooltipTrigger className="w-full h-[120px] bg-zinc-700 rounded-xl flex justify-center items-center group">
-                                      <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
-                                        {item.icon}
-                                      </div>
-                                    </TooltipTrigger>
-                                    <TooltipContent>{item.name}</TooltipContent>
-                                  </Tooltip>
-                                </TooltipProvider>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </ScrollArea>
+                      <ul className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-4">
+                        {skill.list.map((item, index) => {
+                          return (
+                            <li key={index}>
+                              <TooltipProvider delayDuration={100}>
+                                <Tooltip>
+                                  <TooltipTrigger className="w-full h-[120px] bg-zinc-700 rounded-xl flex justify-center items-center group">
+                                    <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
+                                      {item.icon}
+                                    </div>
+                                  </TooltipTrigger>
+                                  <TooltipContent>{item.name}</TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </div>
                   );
                 })}
@@ -313,12 +311,14 @@ const Resume = () => {
                 </p>
               </div>
               <p className="text-4xl font-semibold">Contact Info</p>
-              <ul className="grid grid-cols-1 lg:grid-col-2">
+              <ul className="flex flex-col gap-2">
                 {about.info.map((item, index) => {
                   return (
-                    <div key={index} className="grid grid-cols-2">
-                      <p className="text-white/60 text-xl">{item.fieldName}</p>
-                      <p className="text-xl font-semibold">{item.fieldValue}</p>
+                    <div className="grid grid-cols-2 gap-8" key={index}>
+                      <p className="text-white/60 text-md">{item.fieldName}</p>
+                      <p className="text-md font-semibold text-wrap">
+                        {item.fieldValue}
+                      </p>
                     </div>
                   );
                 })}
