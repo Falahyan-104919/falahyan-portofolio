@@ -249,7 +249,11 @@ const Resume = () => {
                           <ul className="list-disc">
                             {item.final_project.description.map(
                               (desc, index) => {
-                                return <li className="text-justify">{desc}</li>;
+                                return (
+                                  <li className="text-justify" key={index}>
+                                    {desc}
+                                  </li>
+                                );
                               }
                             )}
                           </ul>

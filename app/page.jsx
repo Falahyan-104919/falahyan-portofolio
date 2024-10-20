@@ -20,8 +20,8 @@ const Home = () => {
               <span>Developer</span>
             </div>
             <h1 className="h1 mb-6">
-              Hello I'm <br />{' '}
-              <span className="text-accent-default">Falahyan</span>
+              Hello I &quot m <br />
+              <span className="text-accent-default ml-1">Falahyan</span>
             </h1>
             <Summary />
             <div className="flex flex-col xl:flex-row items-center gap-6">
